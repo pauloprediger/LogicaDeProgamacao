@@ -1,0 +1,41 @@
+/* Redefinir margens e preenchimento */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Redefinir listas */
+  ul,
+  ol {
+    list-style: none;
+  }
+  
+  /* Redefinir links */
+  a {
+    text-decoration: none;
+  }
+  
+  /* Redefinir imagens */
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Redefinir tabelas */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  /* Redefinir formulários */
+  input,
+  textarea,
+  select {
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+  }
