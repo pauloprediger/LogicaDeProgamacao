@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root{
     --cor-primeira: #F58A07;
     --cor-segunda: #FFFFFF;
     --cor-terceira: #070707;
     --cor-quarta: #906AA7;
     --cor-quinta: #371E30;
+
+    --font1: "Roboto";
 }
+
 
 body{
     height: 100vh;
@@ -38,6 +43,7 @@ h1{
     color: #92464B;
     font-size: 3em;
     text-shadow: 1px 1px 2px #070707;
+    font-family: var(--font1);
 }
 
 .leftContent > p {
@@ -47,11 +53,36 @@ h1{
 }
 .rightContent{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 25vw;
     height: 41vh;
     background-color: #322C7E;
     border-radius: 0px 25px 25px 0px;
 }
-a{
-    background-color: white;
+nav {
+    padding-top: 15px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
+nav a {
+    color: var(--cor-primeira); /* Cor inicial do texto */
+    padding: 10px 20px; /* Espaçamento */
+    text-decoration: none; /* Remove o underline padrão */
+    transition: all 0.3s ease-in-out; /* Efeito de transição no hover */
+    font-size: 1.2em;
+
+  }
+  
+  nav a:hover {
+    background-color: var(--cor-quinta); /* Cor de fundo no hover */
+    color: white; /* Cor do texto no hover */
+  }
+  ul li{
+    padding: 5px;
+  }
+  ul > li > a:visited{
+    color: white    ;
+  }
+ 
