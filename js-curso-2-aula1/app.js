@@ -1,5 +1,5 @@
 let listaNumerosSorteados = [];
-let numeroMaximo = 10;
+let numeroMaximo = 2;
 
 // INICIALIZAÇÃO DO JOGO
 
@@ -9,7 +9,8 @@ let tentativas = 1;
 // FUNÇÃO PARA EXIBIR TEXTO NA TELA
 function exibirTextoNaTela (tag, texto) {
     let campo = document.querySelector(tag);
-    campo.innerHTML = texto; 
+    campo.innerHTML = texto;
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate: 1.2}); 
 }
 
 // FUNÇÃO QUE GERA O NÚMERO ALEATÓRIO 
@@ -37,7 +38,7 @@ function limpaCampo () {
 
 function telaInicial () {
     exibirTextoNaTela('h1', 'Jogo do Número Secreto');
-    exibirTextoNaTela('p', 'Escolha um número entre 1 e 10')
+    exibirTextoNaTela('p', `Escolha um número entre 1 e ${numeroMaximo}`)
 }
 
 telaInicial();
@@ -46,7 +47,7 @@ function verificaChute (numero) {
     let chute = document.querySelector('input').value;
     limpaCampo();
     let chuteNum = Number(chute);
-    let palavraTentativa =  tentativas > 1 ? 'tentativas' : 'tentativa'
+    let palavraTentativa =  tentativas > 1 ? 'chutes' : 'chute'
     let mensagemTentativas = `Você descobriu o número com ${tentativas} ${palavraTentativa}`;
     if (chuteNum === numero) {
         document.getElementById('reiniciar').removeAttribute('disabled');
