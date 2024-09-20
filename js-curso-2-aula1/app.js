@@ -1,5 +1,12 @@
-// FUNÇÃO PARA EXIBIR TEXTO NA TELA
+let listaNumerosSorteados = [];
+let numeroMaximo = 10;
 
+// INICIALIZAÇÃO DO JOGO
+
+let numero = gerarNumeroAleatorio(1, numeroMaximo);
+let tentativas = 1;
+
+// FUNÇÃO PARA EXIBIR TEXTO NA TELA
 function exibirTextoNaTela (tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto; 
@@ -8,7 +15,17 @@ function exibirTextoNaTela (tag, texto) {
 // FUNÇÃO QUE GERA O NÚMERO ALEATÓRIO 
 
 function gerarNumeroAleatorio (min, max) {
-    return Math.floor(Math.random() * (max - min +1)) + min;
+    let numeroEscolhido =  Math.floor(Math.random() * (max - min +1)) + min;
+    let quantidadeDeElementosNaLista = listaNumerosSorteados.length;
+    if (quantidadeDeElementosNaLista == numeroMaximo) {
+        listaNumerosSorteados = [];
+    }
+    if (listaNumerosSorteados.includes(numeroEscolhido)) {
+        return gerarNumeroAleatorio();
+    } else {
+        listaNumerosSorteados.push(numeroEscolhido);
+        return numeroEscolhido;
+    } 
 }
 
 // FUNÇÃO QUE LIMPA O CAMPO DE INPUT 
@@ -17,11 +34,6 @@ function limpaCampo () {
     chute = document.querySelector('input');
     chute.value = '';
 }
-
-// INICIALIZAÇÃO DO JOGO
-
-let numero = gerarNumeroAleatorio(1, 10);
-let tentativas = 1;
 
 function telaInicial () {
     exibirTextoNaTela('h1', 'Jogo do Número Secreto');
