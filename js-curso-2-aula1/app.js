@@ -1,5 +1,5 @@
 let listaNumerosSorteados = [];
-let numeroMaximo = 50;
+let numeroMaximo = 40;
 
 // INICIALIZAÇÃO DO JOGO
 
