@@ -37,8 +37,30 @@ function calcula(operador, num1, num2) {
     }
 }
 
+function removeDuplicados (array) {
+    return [...new Set(array)];
+}
+
 calcula('+', 8, 9);
 calcula('-', 8, 9);
 calcula('*', 8, 9);
 calcula('/', 8, 9);
 
+let minhaLista = [1, 2, 3];
+let outraLista = [4, 5, 6];
+let novaLista = minhaLista.concat(outraLista);
+
+console.log(novaLista);
+
+novaLista.pop();
+
+console.log(novaLista);
+
+for (let i = novaLista.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [novaLista[i], novaLista[j]] = [novaLista[j], novaLista[i]];
+}
+
+console.log(novaLista);
+novaLista.push(2, 6, 7, 8, 1, 2, 3, 4,5,6,6,7,8,9,10);
+console.log(removeDuplicados(novaLista));
